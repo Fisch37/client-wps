@@ -8,7 +8,11 @@
   "contact": {},
   "license": "MIT",
   "environment": "client",
-  "entrypoints": { },
+  "entrypoints": {
+    "client": [
+        "de.fisch37.clientwps.ClientWps"
+    ]
+  },
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
