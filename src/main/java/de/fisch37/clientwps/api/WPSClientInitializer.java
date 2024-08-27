@@ -1,6 +1,6 @@
 package de.fisch37.clientwps.api;
 
-import de.fisch37.clientwps.packet.ClientFeaturesPayload;
+import de.fisch37.clientwps.ClientFeatures;
 import de.fisch37.clientwps.packet.waypoints.WaypointInfo;
 
 import java.util.List;
@@ -17,7 +17,7 @@ public interface WPSClientInitializer {
      * Note that not enabling a feature does not guarantee its respective methods won't be called.
      * @return The features supported by this entrypoint
      */
-    ClientFeaturesPayload getFeatures();
+    ClientFeatures getFeatures();
 
     /**
      * Called when the server sends waypoints.

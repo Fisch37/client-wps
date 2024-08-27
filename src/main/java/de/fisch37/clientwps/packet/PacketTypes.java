@@ -1,5 +1,6 @@
 package de.fisch37.clientwps.packet;
 
+import de.fisch37.clientwps.ClientFeatures;
 import de.fisch37.clientwps.packet.waypoints.WaypointTeleport;
 import de.fisch37.clientwps.packet.waypoints.WaypointUpdate;
 import de.fisch37.clientwps.packet.waypoints.WaypointsPayload;
@@ -11,7 +12,7 @@ import static net.minecraft.network.packet.CustomPayload.Id;
 public abstract class PacketTypes {
     private static final String MOD_ID = "cimple-waypoint-system";
 
-    public static final Id<ClientFeaturesPayload> CLIENT_FEATURES = id("client_features");
+    public static final Id<ClientFeatures> CLIENT_FEATURES = id("client_features");
 
     public static final Id<WaypointsPayload> WAYPOINTS = id("waypoints");
     public static final Id<WaypointTeleport> TELEPORT = id("teleport");
@@ -22,7 +23,7 @@ public abstract class PacketTypes {
     }
 
     public static void register() {
-        ClientFeaturesPayload.register();
+        ClientFeatures.register();
 
         WaypointsPayload.register();
         WaypointTeleport.register();

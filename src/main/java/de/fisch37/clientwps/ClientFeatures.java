@@ -1,4 +1,4 @@
-package de.fisch37.clientwps.packet;
+package de.fisch37.clientwps;
 
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.network.RegistryByteBuf;
@@ -9,10 +9,10 @@ import net.minecraft.network.packet.CustomPayload;
 import static de.fisch37.clientwps.packet.PacketTypes.CLIENT_FEATURES;
 
 
-public record ClientFeaturesPayload(int features) implements CustomPayload {
-    public static PacketCodec<RegistryByteBuf, ClientFeaturesPayload> PACKET_CODEC = PacketCodec.tuple(
-            PacketCodecs.INTEGER, ClientFeaturesPayload::features,
-            ClientFeaturesPayload::new
+public record ClientFeatures(int features) implements CustomPayload {
+    public static PacketCodec<RegistryByteBuf, ClientFeatures> PACKET_CODEC = PacketCodec.tuple(
+            PacketCodecs.INTEGER, ClientFeatures::features,
+            ClientFeatures::new
     );
 
     @Override
@@ -56,8 +56,8 @@ public record ClientFeaturesPayload(int features) implements CustomPayload {
             return this;
         }
 
-        public ClientFeaturesPayload build() {
-            return new ClientFeaturesPayload(this.features);
+        public ClientFeatures build() {
+            return new ClientFeatures(this.features);
         }
     }
 }
