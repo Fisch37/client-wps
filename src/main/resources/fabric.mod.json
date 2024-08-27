@@ -7,7 +7,6 @@
   "authors": [ "Fisch37" ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/client-wps/icon.png",
   "environment": "client",
   "entrypoints": { },
   "depends": {
