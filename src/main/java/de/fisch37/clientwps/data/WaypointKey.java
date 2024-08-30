@@ -57,4 +57,9 @@ public record WaypointKey(@Nullable UUID ownerUuid, @NotNull String name, @Nulla
             return Math.clamp(this.ownerName.compareTo(that.ownerName), -1, 1);
         }
     }
+
+    @Override
+    public String toString() {
+        return ownerName == null ? name : ownerName + "/" + name;
+    }
 }
